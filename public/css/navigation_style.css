@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "3952";
+    src: url('../fonts/3952.ttf');
+}
+
+/* Навигация */
+.navigation h2 {
+    color: red;
+}
+
+nav li a {
+    margin: 10px;
+    font-size: large;
+    color: #aa3333;
+    background-color: #ebebeb;
+    opacity: 0.8;
+}
+
+nav li a:hover{
+    background-color: lightgrey;
+    color: #aa3333;
+}
+
+/* Меню сортировки */
+.nav-sort{
+    background-color: rgba(52,58,64, 0.8);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.nav-sort a{
+    font-size: 16px;
+}
+
+/* Загловок меню сортировки */
+.navbar-brand{
+    padding: 2px 15px 3px;
+    border-radius: 5px;
+}
+
+/* Отменяем эфекты hover у заголока меню сортировки*/
+.navbar-brand:hover{
+    background-color: #ebebeb;
+    cursor: default;
+}
+

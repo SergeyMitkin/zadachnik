@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "3952";
+    src: url('../fonts/3952.ttf');
+}
+
+/* Поля форм */
+.group{
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Контейнеры для форм регистрации и авторизации */
+.registration-container,
+.auth-container{
+    margin: 20px ;
+}
+
+/* Форма регистрации */
+.registration-container form,
+.auth-container form
+{
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px;
+    color: whitesmoke;
+    background: rgba(235,235,235, 0.75);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
+}
+
+/* При меньшем размере экрана растягиваем форму регистрации или авторизации на всю страницу */
+@media screen and (max-width: 850px) {
+    .registration-container form,
+    .auth-container form
+    {
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        color: whitesmoke;
+        background: rgba(235,235,235, 0.75);
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
+    }
+}
+
+/* H1 в форме авторизации и регистрации */
+.registration-container h1,
+.auth-container h1{
+    margin: 0;
+    color: #49423d;
+    font-size: 60px;
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 5px;
+}
+
+.registration-container label,
+.auth-container label
+{
+    color: #49423d;
+    font-weight: 500;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+#feedback{
+    color: #ff2b2b;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.registration-container input,
+.auth-container input
+{
+    margin-top: 0px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding-left: 15px;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
+}
+
+#checkbox{
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
+}
+
+.auth-container input[type="checkbox"]{
+    display: none;
+}
+
+.auth-container input[type="checkbox"] + label{
+    padding-left: 20px;
+}
+
+.auth-container input[type="checkbox"] + label::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: whitesmoke;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
+    vertical-align: middle;
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+.auth-container input[type="checkbox"]:checked + label::before{
+    content: '';
+    text-align: center;
+    font-family: sans-serif;
+    background-image: url("../img/checked.png");
+    background-size: 100%;
+}
+
+.registration-container button{
+    padding: 10px 20px;
+    height: 45px;
+    border: none;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.auth-container button{
+    padding: 10px 20px;
+    height: 45px;
+    border: none;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+
