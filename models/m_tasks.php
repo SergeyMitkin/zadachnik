@@ -104,7 +104,7 @@ function sendEmail($message){
         $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         $mail->CharSet = "utf-8";
 
-        //Recipients
+        // Recipients
         $mail->setFrom(SMTP_EMAIL);
         $mail->addAddress(ADMIN_EMAIL);                     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
@@ -131,10 +131,18 @@ function sendEmail($message){
 
 }
 
-function getMessage($user_name, $user_login, $task_name, $dead_line){
+function getMessage($response, $user_name, $user_login, $task_name, $dead_line){
 
-    $message = 'Для пользователя ' . $user_name . ' (логин ' . $user_login .
+    if ($response == 'Задача добавлена'){
+
+        $message = 'Для пользователя ' . $user_name . ' (логин ' . $user_login .
         ') создана задача: ' . $task_name . '. Срок исполнения: ' . $dead_line;
+
+    } else if ($response == 'Задача отредактирована'){
+
+        $message = 'Для пользователя ' . $user_name . ' (логин ' . $user_login .
+            ') отредактирована задача: ' . $task_name . '. Срок исполнения: ' . $dead_line;
+    }
 
     return $message;
 }

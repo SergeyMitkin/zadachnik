@@ -172,7 +172,7 @@ class C_Page extends C_Base
             $task_id = $_POST['task_id']; // Id задачи
             $task_name = $_POST['task_name']; // Имя задачи
             $task_description = clean($_POST['description']); // Описание задачи
-            $user_id = $_POST['user']; // Id ответственного
+            $user_id = $_POST['user_id']; // Id ответственного
             $date = $_POST['date']; // Дата выполнения
             $time = $_POST['time']; // Время выполнения
             $dead_line = $date . " " . $time; // Дату и время заносим в один столбец БД
@@ -186,22 +186,19 @@ class C_Page extends C_Base
             if (empty($_POST['date']) || empty($_POST['time'])) {
                 $dead_line = $_POST['dead_line'];
             }
+
             // Если не ввели время или дату при создании задачи, просим ввести
             if (empty($dead_line) || strlen($dead_line) < 10) {
                 $response = 'Введите время и дату';
             }else{
-
-            // Добавляем или редактируем задачу
-            $response = setTask($task_id, $task_name, $task_description, $user_id, $dead_line);
+                // Добавляем или редактируем задачу
+                $response = setTask($task_id, $task_name, $task_description, $user_id, $dead_line);
             }
 
-            // Информацию о назначении задачи, отправляем на email админа и в telegram:
-            if ($response == 'Задача добавлена') {
-
-                $message = getMessage($user_name, $user_login, $task_name, $dead_line);
-                sendEmail($message);
-                sendTelegramMessage($message);
-            }
+            // Информацию о назначении или редактировании задачи, отправляем на email админа и в telegram:
+            $message = getMessage($response, $user_name, $user_login, $task_name, $dead_line);
+            sendEmail($message);
+            sendTelegramMessage($message);
 
             // Если создана новая задача, определяем её Id
             if ($response == 'Задача добавлена') {
@@ -235,7 +232,7 @@ class C_Page extends C_Base
                 ));
     }
 
-    // Cтраница задачи
+    // Страница задачи
     public function action_one(){
         $this->title .= 'Карточка задачи';
 

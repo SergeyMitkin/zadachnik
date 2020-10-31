@@ -50,7 +50,7 @@
             else{?>
                 <div class="group">
                     <label for="user">Выберете ответственного</label>
-                    <select id="user" name="user">
+                    <select id="user" name="user_id">
                     <?php
                     foreach($usersData as $user) {
                     echo '<option value="' . $user['user_id'] . '">' . $user['user_name'] . '</option>';
