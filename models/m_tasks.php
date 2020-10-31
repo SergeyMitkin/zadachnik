@@ -89,7 +89,7 @@ function sendTelegramMessage($text){
     curl_exec($ch);
 }
 
-function sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line){
+function sendEmail($message){
 
     $mail = new PHPMailer(true);
     try {
@@ -105,8 +105,8 @@ function sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line
         $mail->CharSet = "utf-8";
 
         //Recipients
-        $mail->setFrom('li-mukhammed@mail.ru');
-        $mail->addAddress($admin_email);                     // Add a recipient
+        $mail->setFrom(SMTP_EMAIL);
+        $mail->addAddress(ADMIN_EMAIL);                     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
         // $mail->addCC('cc@example.com');
@@ -120,8 +120,7 @@ function sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line
         $mail->isHTML(true);
 
         $mail->Subject = 'Создана задача';
-        $mail->Body    = 'Для пользователя ' . $user_name . '(логин ' . $user_login .
-            ') создана задача <br>' . $task_name . '<br> Срок исполнения: ' . $dead_line;
+        $mail->Body    = $message;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
@@ -130,6 +129,14 @@ function sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
+}
+
+function getMessage($user_name, $user_login, $task_name, $dead_line){
+
+    $message = 'Для пользователя ' . $user_name . ' (логин ' . $user_login .
+        ') создана задача: ' . $task_name . '. Срок исполнения: ' . $dead_line;
+
+    return $message;
 }
 
 // Определяем Id последней добавленной задачи

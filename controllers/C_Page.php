@@ -139,9 +139,15 @@ class C_Page extends C_Base
     public function action_create(){
             $create_or_update = 'Создайте задачу'; // Заголовок страницы
             $usersData = getUsersData(); // Получаем данные таблицы Users
-            $admin_email = 'sergeymitkin@gmail.com';
             $task_name = ''; // Объявляем имя задачи
             $task_description = ''; // Описание задачи
+
+            // Объявляем константы для отправки сообщений
+            // логин бота t.me/zadachnik1984_bot
+            define('SMTP_EMAIL', 'li-mukhammed@mail.ru');
+            define('ADMIN_EMAIL', 'sergeymitkin@gmail.com'); // email админа
+            define('TELEGRAM_TOKEN', '1409865615:AAGHCkrCf3fMv2KQIvrykgFjJEGLdcaAWWw'); // Токен телеграм-бота
+            define('TELEGRAM_CHATID', '460227562'); // Телеграм-id админа
 
             // Если есть id_task в get-параметре, значит задача редактируется
             if (isset($_GET['id_task'])){
@@ -191,15 +197,10 @@ class C_Page extends C_Base
 
             // Информацию о назначении задачи, отправляем на email админа и в telegram:
             if ($response == 'Задача добавлена') {
-                sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line);
 
-                // сюда нужно вписать токен вашего бота
-                define('TELEGRAM_TOKEN', '1409865615:AAGHCkrCf3fMv2KQIvrykgFjJEGLdcaAWWw');
-
-                // сюда нужно вписать ваш внутренний айдишник
-                define('TELEGRAM_CHATID', '460227562');
-
-                sendTelegramMessage('Привет!');
+                $message = getMessage($user_name, $user_login, $task_name, $dead_line);
+                sendEmail($message);
+                sendTelegramMessage($message);
             }
 
             // Если создана новая задача, определяем её Id
@@ -207,7 +208,7 @@ class C_Page extends C_Base
                 $task_id = getLastInsertedTaskId();
                 header("location: index.php?c=page&act=one&id_task=" . $task_id); // Переходим на страницу этой задачи
 
-                // Иначе если задача редактировалась, переходим на страницу этой задачи
+            // Иначе если задача редактировалась, переходим на страницу этой задачи
             }else if ($response == 'Задача отредактирована'){
                 header("location: index.php?c=page&act=one&id_task=" . $task_id); // Переходим на страницу этой задачи
             }
