@@ -6,6 +6,7 @@
  * Time: 13:05
  */
 
+// комментарии
 // сюда нужно вписать токен вашего бота
 define('TELEGRAM_TOKEN', '999999999:XXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 
