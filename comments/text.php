@@ -5,8 +5,7 @@
  * Date: 31.10.2020
  * Time: 13:05
  */
-
-// комментарии
+// comments
 // сюда нужно вписать токен вашего бота
 define('TELEGRAM_TOKEN', '999999999:XXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 
