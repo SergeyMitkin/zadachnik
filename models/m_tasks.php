@@ -70,6 +70,25 @@ function getTask($id_task)
     }
 }
 
+function sendTelegramMessage($text){
+
+    $ch = curl_init();
+    curl_setopt_array(
+        $ch,
+        array(
+            CURLOPT_URL => 'https://api.telegram.org/bot' . TELEGRAM_TOKEN . '/sendMessage',
+            CURLOPT_POST => TRUE,
+            CURLOPT_RETURNTRANSFER => TRUE,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_POSTFIELDS => array(
+                'chat_id' => TELEGRAM_CHATID,
+                'text' => $text,
+            ),
+        )
+    );
+    curl_exec($ch);
+}
+
 function sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line){
 
     $mail = new PHPMailer(true);

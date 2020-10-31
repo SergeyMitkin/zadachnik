@@ -189,9 +189,17 @@ class C_Page extends C_Base
             $response = setTask($task_id, $task_name, $task_description, $user_id, $dead_line);
             }
 
-            // Информацию о назначении/редактировании задачи, отправляем на email админа:
+            // Информацию о назначении задачи, отправляем на email админа и в telegram:
             if ($response == 'Задача добавлена') {
                 sendEmail($admin_email, $user_name, $user_login, $task_name, $dead_line);
+
+                // сюда нужно вписать токен вашего бота
+                define('TELEGRAM_TOKEN', '1409865615:AAGHCkrCf3fMv2KQIvrykgFjJEGLdcaAWWw');
+
+                // сюда нужно вписать ваш внутренний айдишник
+                define('TELEGRAM_CHATID', '460227562');
+
+                sendTelegramMessage('Привет!');
             }
 
             // Если создана новая задача, определяем её Id
