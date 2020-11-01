@@ -1,1 +1,40 @@
-<?php//// Класс шаблонизатора//abstract class Controller{	// Генерация внешнего шаблона	abstract function render();	// Запрос произведен методом GET?	protected function IsGet()	{		return $_SERVER['REQUEST_METHOD'] == 'GET';	}	// Запрос произведен методом POST?	protected function IsPost()	{		return $_SERVER['REQUEST_METHOD'] == 'POST';	}	// Генерация HTML шаблона    protected function Template($fileName, $vars = array())    {        // Установка переменных для шаблона.        foreach ($vars as $k => $v)        {            $$k = $v;        }        // Генерация HTML        ob_start();        include "$fileName";        return ob_get_clean();    }	// Если вызвали метод, которого нет - завершаем работу	public function __call($name, $params){        die('Не верный url-адрес!!!');	}}
+<?php
+//
+// Класс шаблонизатора
+//
+abstract class Controller
+{
+	// Генерация внешнего шаблона
+	abstract function render();
+
+	// Запрос произведен методом GET?
+	protected function IsGet()
+	{
+		return $_SERVER['REQUEST_METHOD'] == 'GET';
+	}
+
+	// Запрос произведен методом POST?
+	protected function IsPost()
+	{
+		return $_SERVER['REQUEST_METHOD'] == 'POST';
+	}
+
+	// Генерация HTML шаблона
+    protected function Template($fileName, $vars = array())
+    {
+        // Установка переменных для шаблона.
+        foreach ($vars as $k => $v)
+        {
+            $$k = $v;
+        }
+        // Генерация HTML
+        ob_start();
+        include "$fileName";
+        return ob_get_clean();
+    }
+
+	// Если вызвали метод, которого нет - завершаем работу
+	public function __call($name, $params){
+        die('Не верный url-адрес!!!');
+	}
+}

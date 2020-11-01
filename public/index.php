@@ -1,7 +1,9 @@
 <?php
+
 include_once('../controllers/C_Page.php'); // Контроллер страниц
 include_once('../controllers/C_Ajax.php'); // Контроллер для ajax-запросов
 include_once('../models/m_ajax.php'); // Модель для ajax-запросов
+
 session_start(); // Начинаем сессию
 
 // Проверяем включен ли JS в браузере у пользователя
@@ -32,5 +34,3 @@ else {
     $controller = new C_Ajax(); // Объкт с полученными данными
     $controller->$isAjax();
 }
-
-

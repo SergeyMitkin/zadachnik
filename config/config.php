@@ -1,4 +1,6 @@
 <?php
+
+
 // Константы для работы с БД
 define('DB_DRIVER','mysql');
 define('DB_HOST','localhost');
