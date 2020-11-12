@@ -2,7 +2,7 @@
 'use strict';
 
 var numberOfItems = $("#row-tasks .list-group").length; // Число страниц
-var limitPerPage = 3; // Количество превью задач на странице
+var limitPerPage = 6; // Количество превью задач на странице
 $("#row-tasks .list-group:gt(" + (limitPerPage - 1) + ")").hide(); // Скрываем задачи не на первой странице
 var totalPages = 0; // Переменная для общего количества страниц
 

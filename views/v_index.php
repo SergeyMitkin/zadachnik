@@ -10,9 +10,9 @@
     <!-- Кнопки для параметров сортировки -->
     <div class="navigation">
         <!-- navs -->
-        <h2 id="page-title" class="display-4 py-3 my-3 text-center"><strong>СПИСОК ЗАДАЧ:</strong></h2>
+        <h2 id="page-title" class="display-4 py-3 my-3 text-center"><strong>Список задач:</strong></h2>
         <nav id="sort-nav" class="navbar navbar-light nav justify-content-center nav-pills flex-column flex-sm-row nav-sort">
-            <li><a class="navbar-brand" href="#">Сортировка задач:</a></li>
+            <li><a class="navbar-brand" href="#">Сортировка:</a></li>
             <li><a id="sort_user_name" class="nav-link" href="?sort=<?=$sort_user_name?>"><?=$nav_title_sort_user_name?></a></li>
             <li><a id="sort_deadline" class="nav-link" href="?sort=<?=$sort_date?>"><?=$nav_title_sort_date?></a></li>
             <li><a id="sort_status" class="nav-link" href="?sort=<?=$sort_status?>"><?=$nav_title_sort_status?></a></li>
