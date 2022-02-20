@@ -1,5 +1,5 @@
 <?php
-// Получем ajax-запрос из get или post параметра
+// Получаем ajax-запрос из get или post параметра
 function getAjax(){
     $isAjax = '';
 

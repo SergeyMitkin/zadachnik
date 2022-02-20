@@ -26,11 +26,11 @@ $isAjax = getAjax();
 // Если нет, загружаем новую страницу
 if (!$isAjax) {
     $controller = new C_page(); // Объявляем объект новой страницы
-    $controller->$action(); // Определяем, какя это будет страница
+    $controller->$action(); // Определяем, какая это будет страница
     $controller->render(); // Генерируем шаблон страницы
 }
 // Если да, получаем данные через ajax-запрос
 else {
-    $controller = new C_Ajax(); // Объкт с полученными данными
+    $controller = new C_Ajax(); // Объект с полученными данными
     $controller->$isAjax();
 }

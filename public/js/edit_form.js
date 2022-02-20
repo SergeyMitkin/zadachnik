@@ -85,7 +85,7 @@ $(document).ready(function () {
 
         var elUser = document.getElementById('task_modal_user'); // Элемент, выводящий имя ответсвенного
         var elUserId = document.getElementById('hidden-user-id') // Input hidden, содержащий id ответственного
-        var userId = elUserId.getAttribute('value'); // Получаем Id ответсвенного
+        var userId = elUserId.getAttribute('value'); // Получаем Id ответственного
 
         var elEditUser = document.getElementById('edit-task_modal_user-form'); // Форма для редактирования
         var elEditUserButton = document.getElementById("edit-task_modal_user-button"); // Кнопка "Изменить"
@@ -117,7 +117,7 @@ $(document).ready(function () {
             },
         });
 
-        elUser.setAttribute("hidden", ""); // Скрываем элемент с именем ответсвенного
+        elUser.setAttribute("hidden", ""); // Скрываем элемент с именем ответственного
         elEditUser.removeAttribute("hidden"); // Показываем форму редактирования
         elEditUserButton.setAttribute("hidden", ""); // Скрываем кнопку "Изменить"
     });

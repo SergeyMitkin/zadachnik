@@ -27,7 +27,7 @@ class C_Ajax extends Controller // Наследуем от класса шабл
         echo $task_data;
     }
 
-    // Получаем дянные пользователей
+    // Получаем данные пользователей
     public function getUsers(){
         $users = getUsersData();
         echo json_encode($users);
