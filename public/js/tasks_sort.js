@@ -92,7 +92,7 @@ $("#sort_status").on('click', function () {
     let row_tasks = document.querySelector("#row-tasks"); // Div - родитель для карточек задач
 
     // ASC и DESC сортировка
-    if (hrefSortStatus.textContent == 'По статусу (z-a↓)') {
+    if (hrefSortStatus.textContent == 'Текущие') {
         // Сортировка "пузырьком" карточек задач по атрибуту data-sortStatus, содержащему статус задачи
         $("#row-tasks .list-group").show();
         for (let i = 0; i < row_tasks.children.length; i++){
@@ -104,7 +104,7 @@ $("#sort_status").on('click', function () {
                 }
             }
         }
-        hrefSortStatus.textContent = 'По статусу (a-z↓)'; // Изменяем текст ссылки
+        hrefSortStatus.textContent = 'Выполненные'; // Изменяем текст ссылки
         startSortWithFirstPage(); // Начинаем сортировку с первой страницы
 
     }else{
@@ -119,7 +119,7 @@ $("#sort_status").on('click', function () {
                 }
             }
         }
-        hrefSortStatus.textContent = 'По статусу (z-a↓)';// Изменяем текст ссылки
+        hrefSortStatus.textContent = 'Текущие';// Изменяем текст ссылки
         startSortWithFirstPage(); // Начинаем сортировку с первой страницы
     }
 })

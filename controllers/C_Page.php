@@ -30,7 +30,8 @@ class C_Page extends C_Base
         // Выводим на кнопки значения сортировки
         $nav_title_sort_user_name = 'По имени пользователя (a-z↓)';
         $nav_title_sort_date = 'По сроку выполнения (→)';
-        $nav_title_sort_status = 'По статусу (a-z↓)';
+        $nav_title_sort_status = 'Выполненные';
+//        $nav_title_sort_status = 'По статусу (a-z↓)';
 
         $statusData = getStatusData();// Данные таблицы status
         $usersData = getUsersData();  // Данные таблицы users
@@ -78,13 +79,13 @@ class C_Page extends C_Base
                     $sort_status = '-status'; // При следующем нажатии на кнопку изменяем порядок сортировки
                     $order_value = 'status'; // Передаём в sql-запрос парарметр для сортировки
                     $order = 'ASC';             // Указываем порядок сортировки
-                    $nav_title_sort_status = 'По статусу (z-a↓)'; // Отображаем порядок сортировки на кнопке
+                    $nav_title_sort_status = 'Текущие'; // Отображаем порядок сортировки на кнопке
                     break;
                 case '-status';
                     $sort_status = 'status'; // При следующем нажатии на кнопку изменяем порядок сортировки
                     $order_value = 'status'; // Передаём в sql-запрос парарметр для сортировки
                     $order = 'DESC'; // Указываем порядок сортировки
-                    $nav_title_sort_status = 'По статусу (a-z↓)';// Отображаем порядок сортировки на кнопке
+                    $nav_title_sort_status = 'Текущие';// Отображаем порядок сортировки на кнопке
                     break;
             }
         }

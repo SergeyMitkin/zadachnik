@@ -21,6 +21,21 @@ header{
     background: #1D2B52;
 }
 
+.sorting h1 {
+    color: #00ff00;
+    font-family: "3952", sans-serif;
+    font-size: 90px;
+    background: rgba(108,117,125, 0.8);
+    border-radius: 5px;
+}
+
+#sorting-title {
+    color: whitesmoke;
+    margin-right: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
 footer{
     background: darkkhaki;
     padding: 10px 20px 0px 20px;

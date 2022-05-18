@@ -4,10 +4,6 @@
 }
 
 /* Навигация */
-.navigation h2 {
-    color: red;
-}
-
 nav li a {
     margin: 10px;
     font-size: large;
