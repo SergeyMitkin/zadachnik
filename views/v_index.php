@@ -28,6 +28,7 @@
             <div id="column_task_<?=$task['task_id']?>"
                 class="col-md-6 col-lg-4 task-column task-cards list-group"
                 data-toggle="modal" data-target="#taskModal"
+                data-sortUser = "<?=$task['user_name']?>"
                 data-sort-deadline = "<?=$task['dead_line']?>"
                 data-sortStatus = "<?=$task['status_name']?>">
 
