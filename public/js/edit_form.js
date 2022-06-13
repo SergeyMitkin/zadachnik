@@ -55,7 +55,7 @@ $(document).ready(function () {
     })
 })
 
-// При нажатии кнопки "Изменть" при изменении срока выполнения задачи
+// При нажатии кнопки "Изменить" при изменении срока выполнения задачи
 $(document).ready(function () {
     $("#edit-task_modal_deadline-button").on('click', function () {
 
@@ -79,11 +79,11 @@ $(document).ready(function () {
     })
 })
 
-// При нажатии кнопки "Изменить" при смене ответсвенного за выполнение задачи
+// При нажатии кнопки "Изменить" при смене ответственного за выполнение задачи
 $(document).ready(function () {
     $('#edit-task_modal_user-button').on('click', function () {
 
-        var elUser = document.getElementById('task_modal_user'); // Элемент, выводящий имя ответсвенного
+        var elUser = document.getElementById('task_modal_user'); // Элемент, выводящий имя ответственного
         var elUserId = document.getElementById('hidden-user-id') // Input hidden, содержащий id ответственного
         var userId = elUserId.getAttribute('value'); // Получаем Id ответственного
 
