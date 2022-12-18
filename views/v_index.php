@@ -92,7 +92,8 @@
                     '&order='. $order .
                     '" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span></a>
+                    <span class="sr-only">Previous</span>
+                </a>
             </li>'
                 ;}?>
 
