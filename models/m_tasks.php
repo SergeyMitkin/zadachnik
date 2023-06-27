@@ -100,9 +100,9 @@ function sendEmail($message){
         $mail->Host       = 'smtp.mail.ru';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = 'li-mukhammed@mail.ru';                     // SMTP username
-        $mail->Password   = '2pUuKIeF2ia$';                               // SMTP password
+        $mail->Password   = 'PwzJ3SSnSc7uL9v60Bnf';                               // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->Port       = 587;                                   // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         $mail->CharSet = "utf-8";
 
         // Recipients
